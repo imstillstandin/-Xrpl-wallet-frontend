@@ -1,3 +1,20 @@
+const fetchPortfolio = async () => {
+  setLoading(true);
+  console.log("Fetching for wallet:", wallet);
+  console.log("Using API base:", import.meta.env.VITE_API_BASE_URL);
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/wallet/${wallet}`);
+    const data = await res.json();
+    console.log("Received data:", data);
+    setPortfolio(data);
+  } catch (err) {
+    console.error('Failed to fetch portfolio:', err);
+    setPortfolio(null);
+  } finally {
+    setLoading(false);
+  }
+};
+
 import { useState } from 'react';
 
 function App() {
