@@ -13,7 +13,7 @@ function App() {
     setPortfolio(null);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/wallet/${wallet}`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/wallet/${rsKDFfrzxKddk23yRxkNp67HCYYiBBCCYk}`);
       if (!res.ok) {
         throw new Error(`Error ${res.status}: ${res.statusText}`);
       }
